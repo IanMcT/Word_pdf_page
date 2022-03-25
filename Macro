@@ -1,0 +1,18 @@
+Sub Macro2()
+'
+' Macro2 Macro
+'
+'
+    Dim student As String
+    Selection.Copy
+    
+student = Selection.Text
+    
+    ActiveDocument.ExportAsFixedFormat OutputFileName:= _
+        "C:\Users\ian.mctavish\Downloads\" & student & ".pdf", ExportFormat:= _
+        wdExportFormatPDF, OpenAfterExport:=True, OptimizeFor:= _
+        wdExportOptimizeForPrint, Range:=wdExportCurrentPage, From:=1, To:=1, _
+        Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _
+        CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _
+        BitmapMissingFonts:=True, UseISO19005_1:=False
+End Sub
